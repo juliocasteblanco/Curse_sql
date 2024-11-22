@@ -1,0 +1,67 @@
+ SELECT *
+    From Afiliados;
+    
+     SELECT *
+    From Sat;
+    
+    SELECT *
+    From Ministerio;
+    
+-- segunda consulta alias (minimo 3 consultas)
+
+SELECT A.Estado 
+FROM Afiliados A;
+
+SELECT S.Regimen 
+FROM Sat S;
+
+SELECT M.Nombres 
+FROM Ministerio M;
+
+-- tercra consulta (minimo 2 consultar)
+
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Sat S 
+on A.IDNumero_Doc = S.IDNumero_Doc;
+
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Ministerio M 
+on A.IDNumero_Doc = M.IDNumero_Doc;
+
+-- union queries
+
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Sat S 
+on A.IDNumero_Doc = S.IDNumero_Doc
+UNION
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Ministerio M 
+on A.IDNumero_Doc = M.IDNumero_Doc;
+
+--intersepcion de queries DOS CONSULTAS
+
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Sat S 
+on A.IDNumero_Doc = S.IDNumero_Doc
+INTERSECT
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Ministerio M 
+on A.IDNumero_Doc = M.IDNumero_Doc;
+
+-- EX QUERYS DOS CONSULTAS
+
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Sat S 
+on A.IDNumero_Doc = S.IDNumero_Doc
+EXCEPT
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Ministerio M 
+on A.IDNumero_Doc = M.IDNumero_Doc;

@@ -1,0 +1,32 @@
+--CREAR PROCEDIMIENTO
+ CREATE  PROCEDURE  obtener_Fecha_Nacimiento
+AS
+BEGIN
+
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Sat S 
+on A.IDNumero_Doc = S.IDNumero_Doc
+
+UNION
+
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Ministerio M 
+on A.IDNumero_Doc = M.IDNumero_Doc;
+
+END;
+
+EXEC obtener_Fecha_Nacimiento
+
+
+alter  PROCEDURE  obtener_fecha_nacimiento
+AS
+BEGIN
+
+SELECT A.Nombres AS AfiliadosNomnbres
+FROM Afiliados A
+INNER JOIN Sat S 
+on A.IDNumero_Doc = S.IDNumero_Doc
+
+END;
