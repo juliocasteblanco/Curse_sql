@@ -1,11 +1,3 @@
-USE master
-GO
-DROP DATABASE IF EXISTS CursoSQL
-GO
-CREATE DATABASE CursoSQL
-GO
-USE CursoSQL
-
 CREATE TABLE Afiliados (
     IDNumero_Doc INT PRIMARY KEY IDENTITY,
     Tipo_Doc VARCHAR(2) NOT NULL,        
@@ -70,3 +62,5 @@ values
 ('123456','CC','Fernadez','Miranda','Jose','01-06-1994')
 ('1234567','TI','Bernal','Rincon','Juan Felipe','01-02-2001'),
 ('12345678','PT','Franco','Jimenez','Jacinto','01-02-2001')
+
+
